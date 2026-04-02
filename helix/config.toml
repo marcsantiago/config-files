@@ -1,4 +1,4 @@
-theme = "github_dark_dimmed"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
