@@ -47,7 +47,6 @@ render = true
 left = ["mode", "spinner", "version-control", "file-name"]
 
 [keys.insert]
-j = {k = "normal_mode"}
 C-h = "move_char_left"
 C-l = "move_char_right"
 C-j = "move_line_down"
@@ -57,7 +56,6 @@ C-k = "move_line_up"
 "ret" = "goto_word"
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-
 # Yazi
 C-y = [
   ':sh rm -f /tmp/unique-file',
@@ -66,7 +64,8 @@ C-y = [
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
 ]
-
+# shortcut to format then save
+W = [":format", ":w"]
 C-space = "signature_help"
 
 [editor.file-picker]
