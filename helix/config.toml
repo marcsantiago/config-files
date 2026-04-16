@@ -9,7 +9,9 @@ true-color = true
 rulers = [120]
 # Minimum severity to show a diagnostic after the end of a line
 end-of-line-diagnostics = "hint"
-
+# Scrolling Behavior
+scroll-lines = 3
+scrolloff = 5
 
 # Turn on LSP-powered completion
 auto-completion = true           # shows popup as you type
