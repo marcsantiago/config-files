@@ -86,3 +86,7 @@ hidden = false
 ignore = true
 git-ignore = true
 git-global = true
+
+
+[keys.normal.space]
+B = ":echo %sh{hash=$(git blame -L %{cursor_line},+1 %{buffer_name} | awk '{print $1}'); echo \"$hash $(git show -s --format='%an: %s' $hash)\"}"
