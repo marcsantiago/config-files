@@ -49,3 +49,6 @@ map cmd+9 goto_tab 9
 
 # Browse session files inside a directory and pick one
 map f6>p goto_session ~/.config/kitty
+
+# Make sure to respect the Mac option key
+macos_option_as_alt yes
