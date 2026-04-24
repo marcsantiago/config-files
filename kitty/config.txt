@@ -1,42 +1,46 @@
+# --- THEME ---
 # begin_kitty_theme
 # catppuccin-mocha
 include current-theme.conf
 # end_kitty_theme
 
+# --- FONTS ---
 # begin_kitty_fonts
 font_size 15.0
-font_family      family='meslolgl nerd font mono' postscript_name=meslolglnfm-regular
+font_family      family='MesloLGL Nerd Font Mono' postscript_name=MesloLGLNFM-Regular
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 # end_kitty_fonts
 
-# command + d: split vertically in the current directory
-# map cmd+d launch --cwd=current --location=vsplit
-map kitty_mod+enter new_window_with_cwd
-
-# stop kitty from interfering with show-desktop on my mac
-macos_traditional_fullscreen yes
-
-# cursor shape default
+# --- CURSOR ---
 cursor_shape block
-
-# cursor style
 cursor_blink_interval 0
 cursor_stop_blinking_after 0
 
-# thickness tweaks (makes it look modern)
+# Thickness and Modern UI tweaks
 cursor_beam_thickness 1.5
 cursor_underline_thickness 2.0
-
-# optional but cool
 cursor_trail 1
 cursor_trail_decay 0.1 0.3
 
-# when window loses focus
+# When window loses focus
 cursor_shape_unfocused hollow
 
-# Add shortcut for quick tab switching
+# --- MOUSE SETTINGS ---
+# This ensures that mouse clicks are passed to Helix even when switching tabs
+# and prevents Kitty from "stealing" the click for terminal selection.
+mouse_map left click grabbed,ungrabbed mouse_handle_click selection link prompt
+
+# This helps MacOS reporting stay synced
+focus_follows_mouse yes
+shell_integration enabled
+
+# --- KEYBINDINGS ---
+# Command + Enter: new window in current directory
+map kitty_mod+enter new_window_with_cwd
+
+# Quick tab switching (Cmd + 1-9)
 map cmd+1 goto_tab 1
 map cmd+2 goto_tab 2
 map cmd+3 goto_tab 3
@@ -47,8 +51,9 @@ map cmd+7 goto_tab 7
 map cmd+8 goto_tab 8
 map cmd+9 goto_tab 9
 
-# Browse session files inside a directory and pick one
+# Browse session files
 map f6>p goto_session ~/.config/kitty
 
-# Make sure to respect the Mac option key
+# --- MACOS SPECIFIC ---
+macos_traditional_fullscreen yes
 macos_option_as_alt yes
