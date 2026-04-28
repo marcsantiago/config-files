@@ -28,12 +28,13 @@ cursor_trail_decay 0.1 0.3
 cursor_shape_unfocused hollow
 
 # --- MOUSE SETTINGS ---
-# This ensures that mouse clicks are passed to Helix even when switching tabs
-# and prevents Kitty from "stealing" the click for terminal selection.
-mouse_map left click grabbed,ungrabbed mouse_handle_click selection link prompt
+# Kitty natively passes clicks to Helix. We do not want to override the "grabbed" state.
+# (If you ever need to use Kitty's native selection or click a link while in Helix, just hold Shift + Click).
 
-# This helps MacOS reporting stay synced
-focus_follows_mouse yes
+# Disabled to prevent macOS focus desyncs when moving the mouse to switch tabs
+focus_follows_mouse no
+
+# Keep this enabled for proper terminal features
 shell_integration enabled
 
 # --- KEYBINDINGS ---
