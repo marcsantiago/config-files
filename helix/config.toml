@@ -58,13 +58,16 @@ C-k = "move_line_up"
 "ret" = "goto_word"
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
 # Yazi
 C-y = [
   ':sh rm -f /tmp/unique-file',
+  ':set mouse false', # Force Helix to drop mouse tracking
   ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
   ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
+  ':set mouse true', # Force Helix to re-enable Kitty's mouse protocol
 ]
 
 # Lazygit binding
