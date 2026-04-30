@@ -71,7 +71,14 @@ C-y = [
 ]
 
 # Lazygit binding
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-g = [
+  ":set mouse false",
+  ":new", 
+  ":insert-output lazygit", 
+  ":buffer-close!", 
+  ":redraw",
+  ":set mouse true"
+]
 
 # Next word selection hack
 G = [
