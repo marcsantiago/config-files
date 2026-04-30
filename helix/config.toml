@@ -34,7 +34,7 @@ select = "underline"
 [editor.auto-save]
 focus-lost = true
 after-delay.enable = true
-after-delay.timeout = 3000
+after-delay.timeout = 60000 # 1 minute delay if inactivity before auto save
 
 [editor.inline-diagnostics]
 cursor-line = "error" # Show inline diagnostics when the cursor is on the line
