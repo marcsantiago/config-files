@@ -58,3 +58,6 @@ map f6>p goto_session ~/.config/kitty
 # --- MACOS SPECIFIC ---
 macos_traditional_fullscreen yes
 macos_option_as_alt yes
+
+# --- MACOS SPECIFIC ---
+copy_on_select clipboard
