@@ -56,8 +56,9 @@ C-k = "move_line_up"
 
 [keys.normal]
 "ret" = "goto_word"
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+D     = ["extend_to_line_end", "delete_selection"]
 
 # Yazi
 C-y = [
