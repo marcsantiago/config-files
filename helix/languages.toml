@@ -16,7 +16,8 @@ command = "gopls"
 
 [language-server.gopls.config]
 completeUnimported = true
-usePlaceholders = true
+# testing the configuration to see if this feels better when programming with auto-complete
+usePlaceholders = false
 
 # Linter server powered by golangci-lint
 [language-server.golangci-lint-lsp]
