@@ -30,7 +30,6 @@ cursor_shape_unfocused hollow
 # --- MOUSE SETTINGS ---
 # Kitty natively passes clicks to Helix. We do not want to override the "grabbed" state.
 # (If you ever need to use Kitty's native selection or click a link while in Helix, just hold Shift + Click).
-
 # Disabled to prevent macOS focus desyncs when moving the mouse to switch tabs
 focus_follows_mouse no
 
@@ -40,6 +39,15 @@ shell_integration enabled
 # --- KEYBINDINGS ---
 # Command + Enter: new window in current directory
 map kitty_mod+enter new_window_with_cwd
+
+# --- PANE MANAGEMENT ---
+enabled_layouts splits
+map cmd+enter launch --location=hsplit --cwd=current
+map cmd+ctrl+enter launch --location=vsplit --cwd=current
+map cmd+h neighboring_window left
+map cmd+j neighboring_window down
+map cmd+k neighboring_window up
+map cmd+l neighboring_window right
 
 # Quick tab switching (Cmd + 1-9)
 map cmd+1 goto_tab 1
@@ -53,6 +61,7 @@ map cmd+8 goto_tab 8
 map cmd+9 goto_tab 9
 
 # Browse session files
+
 map f6>p goto_session ~/.config/kitty
 
 # --- MACOS SPECIFIC ---
@@ -64,3 +73,6 @@ copy_on_select clipboard
 
 # --- Scrollback Search Into Helix ---
 map cmd+f launch --stdin-source=@screen_scrollback --type=overlay hx -
+
+# allow kitty commands by default
+allow_remote_control yes
