@@ -94,7 +94,7 @@ file-types = ["rs"]
 roots = ["Cargo.toml"]
 auto-format = true
 language-servers = ["rust-analyzer", "typos"]
-#formatter = { command = "rustfmt"}
+#formatter = { command = "rustfmt" }
 #formatter = { command = "cargo", args = ["fmt"] }
 
 [language-server.rust-analyzer.config.check]
@@ -111,6 +111,13 @@ command = "marksman"
 [language-server.markdown-oxide]
 command = "markdown-oxide"
 
+[language-server.trask-lsp]
+command = "trask-lsp"
+
 [[language]]
 name = "markdown"
-language-servers = ["marksman", "markdown-oxide", "typos"]
+file-types = [
+    "md",
+    { glob = "TASK.md" },
+]
+language-servers = ["marksman", "markdown-oxide", "typos", "trask-lsp"]
