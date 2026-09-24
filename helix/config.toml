@@ -25,7 +25,6 @@ auto-signature-help = false
 # Show LSP messages in the status line
 display-messages = true
 
-# other existing settings
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -37,9 +36,8 @@ after-delay.enable = true
 after-delay.timeout = 60000 # 1 minute delay if inactivity before auto save
 
 [editor.inline-diagnostics]
-cursor-line = "error" # Show inline diagnostics when the cursor is on the line
+cursor-line = "error"   # Show inline diagnostics when the cursor is on the line
 other-lines = "disable" # Don't expand diagnostics unless the cursor is on the line
-
 
 [editor.indent-guides]
 character = "╎"
@@ -47,6 +45,15 @@ render = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name"]
+
+[editor.file-picker]
+hidden = false
+# requires a .ignore file in the root, good for ignoring vendor/
+ignore = true
+git-ignore = true
+git-global = true
+
+# --- KEYBINDINGS ---
 
 [keys.insert]
 C-h = "move_char_left"
@@ -59,6 +66,11 @@ C-k = "move_line_up"
 C-j   = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k   = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 D     = ["extend_to_line_end", "delete_selection"]
+
+# Option (Alt) Buffer Navigation
+A-h = ":buffer-previous"
+A-l = ":buffer-next"
+A-w = ":buffer-close"
 
 # Yazi
 C-y = [
@@ -90,16 +102,9 @@ G = [
   "select_regex"
 ]
 
-# shortcut to format then save
+# Shortcut to format then save
 W = [":format", ":w"]
 C-space = "signature_help"
-
-[editor.file-picker]
-hidden = false
-# requires a .ignore file in the root, good for ignoring vendor/
-ignore = true
-git-ignore = true
-git-global = true
 
 [keys.normal.space]
 # B Displays git blame
