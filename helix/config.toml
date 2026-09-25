@@ -12,6 +12,7 @@ end-of-line-diagnostics = "hint"
 # Scrolling Behavior
 scroll-lines = 3
 scrolloff = 5
+color-modes = true
 
 # Turn on LSP-powered completion
 auto-completion = true           # shows popup as you type
